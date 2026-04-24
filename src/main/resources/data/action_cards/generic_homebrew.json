@@ -4,7 +4,7 @@
         "name": "Homebrew Action Card 1",
         "phase": "Action",
         "window": "Action",
-        "text": "Placeholder text for Homebrew Action Card 1.",
+        "text": "The rules for this card are provided by the game host.",
         "source": "generic_homebrew"
     },
     {
@@ -12,7 +12,7 @@
         "name": "Homebrew Action Card 2",
         "phase": "Action",
         "window": "Action",
-        "text": "Placeholder text for Homebrew Action Card 2.",
+        "text": "The rules for this card are provided by the game host.",
         "source": "generic_homebrew"
     },
     {
@@ -20,7 +20,23 @@
         "name": "Homebrew Action Card 3",
         "phase": "Action",
         "window": "Action",
-        "text": "Placeholder text for Homebrew Action Card 3.",
+        "text": "The rules for this card are provided by the game host.",
+        "source": "generic_homebrew"
+    },
+    {
+        "alias": "hb-action-4",
+        "name": "Homebrew Action Card 4",
+        "phase": "Action",
+        "window": "Action",
+        "text": "The rules for this card are provided by the game host.",
+        "source": "generic_homebrew"
+    },
+    {
+        "alias": "hb-action-5",
+        "name": "Homebrew Action Card 5",
+        "phase": "Action",
+        "window": "Action",
+        "text": "The rules for this card are provided by the game host.",
         "source": "generic_homebrew"
     }
 ]
