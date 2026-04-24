@@ -1,0 +1,28 @@
+[
+    {
+        "id": "hb9",
+        "initiative": 9,
+        "name": "Homebrew Strategy Card 9",
+        "primaryTexts": [
+            "The rules for this strategy card are provided by the game host."
+        ],
+        "secondaryTexts": [
+            "The rules for this strategy card are provided by the game host."
+        ],
+        "colourHexCode": "#78909c",
+        "source": "generic_homebrew"
+    },
+    {
+        "id": "hb10",
+        "initiative": 10,
+        "name": "Homebrew Strategy Card 10",
+        "primaryTexts": [
+            "The rules for this strategy card are provided by the game host."
+        ],
+        "secondaryTexts": [
+            "The rules for this strategy card are provided by the game host."
+        ],
+        "colourHexCode": "#546e7a",
+        "source": "generic_homebrew"
+    }
+]
