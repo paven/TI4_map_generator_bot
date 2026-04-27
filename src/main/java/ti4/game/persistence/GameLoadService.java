@@ -180,6 +180,7 @@ class GameLoadService {
             Map<String, Tile> tileMap = getTileMap(gameFileLines, game);
             game.setTileMap(tileMap);
             TransientGameInfoUpdater.update(game);
+            GameCustomCardService.registerIntoMapper(GameCustomCardService.load(game.getName()));
             return game;
         } catch (Exception e) {
             BotLogger.critical(

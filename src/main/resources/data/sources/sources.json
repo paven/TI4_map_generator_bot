@@ -282,13 +282,5 @@
     "data": [
       "Official channel: https://discord.com/channels/743629929484386395/1422472031949029396"
     ]
-  },
-  {
-    "source": "generic_homebrew",
-    "name": "Generic Homebrew",
-    "canal": "community",
-    "subcanal": "personal projs",
-    "credits": "pvn",
-    "description": "Placeholder homebrew content \u2014 replace with your own cards."
   }
 ]

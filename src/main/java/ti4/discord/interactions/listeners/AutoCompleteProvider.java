@@ -316,11 +316,12 @@ class AutoCompleteProvider {
             }
             case Constants.AC_ID -> {
                 String enteredValue = event.getFocusedOption().getValue().toLowerCase();
-                Map<String, String> actionCards = Mapper.getACJustNames();
-                List<Command.Choice> options = actionCards.entrySet().stream()
-                        .filter(value -> value.getValue().toLowerCase().contains(enteredValue))
+                List<Command.Choice> options = Mapper.getActionCards().values().stream()
+                        .filter(ac -> ac.getAlias().toLowerCase().contains(enteredValue)
+                                || ac.getName().toLowerCase().contains(enteredValue)
+                                || (ac.getSource() != null && ac.getSource().toString().toLowerCase().contains(enteredValue)))
                         .limit(25)
-                        .map(value -> new Command.Choice(value.getValue(), value.getKey()))
+                        .map(ac -> new Command.Choice(ac.getName() + " [" + ac.getAlias() + "] (" + ac.getSource() + ")", ac.getAlias()))
                         .collect(Collectors.toList());
                 event.replyChoices(options).queue(Consumers.nop(), BotLogger::catchRestError);
             }

@@ -81,7 +81,6 @@ public class Source {
         memephilosopher,
         omega_phase,
         fowplus,
-        generic_homebrew,
 
         // eronous' stuff
         eronous,

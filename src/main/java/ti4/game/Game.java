@@ -1932,6 +1932,29 @@ public class Game extends GameProperties {
         return getActionCards().remove(id);
     }
 
+    public boolean addACToGame(String id) {
+        if (!Mapper.isValidActionCard(id) || getActionCards().contains(id)) return false;
+        getActionCards().add(id);
+        Collections.shuffle(getActionCards());
+        return true;
+    }
+
+    public int addACCopiesToGame(String id, int count) {
+        if (!Mapper.isValidActionCard(id)) return 0;
+        int added = 0;
+        for (int n = 1; added < count; n++) {
+            String candidate = n == 1 ? id : id + "extra" + n;
+            if (!getActionCards().contains(candidate)) {
+                getActionCards().add(candidate);
+                added++;
+            }
+        }
+        if (added > 0) Collections.shuffle(getActionCards());
+        return (int) getActionCards().stream()
+                .filter(c -> c.replaceAll("extra\\d+$", "").equals(id))
+                .count();
+    }
+
     public boolean removeAgendaFromGame(String id) {
         return getAgendas().remove(id);
     }
@@ -2924,26 +2947,16 @@ public class Game extends GameProperties {
     }
 
     public void drawSpecificActionCard(String acID, String userID) {
-        if (getActionCards().isEmpty()) {
-            return;
-        }
-        int tries = 0;
-        while (tries < 3) {
-            if (getActionCards().contains(acID)) {
-                Player player = getPlayer(userID);
-                if (player != null) {
-                    getActionCards().remove(acID);
-                    player.setActionCard(acID);
-                    return;
-                }
-                tries = 12;
-            }
-            tries++;
-            if (acID.contains("extra1")) {
-                acID = acID.replace("extra1", "extra2");
-            } else {
-                acID += "extra1";
-            }
+        if (getActionCards().isEmpty()) return;
+        String baseId = acID.replaceAll("extra\\d+$", "");
+        String found = getActionCards().stream()
+                .filter(id -> id.replaceAll("extra\\d+$", "").equals(baseId))
+                .findFirst().orElse(null);
+        if (found == null) return;
+        Player player = getPlayer(userID);
+        if (player != null) {
+            getActionCards().remove(found);
+            player.setActionCard(found);
         }
     }
 

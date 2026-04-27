@@ -45,6 +45,7 @@ import ti4.discord.interactions.commands.statistics.StatisticsCommand;
 import ti4.discord.interactions.commands.statistics.StatisticsCommand2;
 import ti4.discord.interactions.commands.status.StatusCommand;
 import ti4.discord.interactions.commands.tech.TechCommand;
+import ti4.discord.interactions.commands.homebrew.HomebrewCommand;
 import ti4.discord.interactions.commands.tf.TwilightFallCommand;
 import ti4.discord.interactions.commands.tigl.TiglCommand;
 import ti4.discord.interactions.commands.tokens.AddCCCommand;
@@ -125,6 +126,7 @@ public class SlashCommandManager {
                     new GenericButtonCommand(),
                     new DiscordantStarsCommand(),
                     new TwilightFallCommand(),
+                    new HomebrewCommand(),
                     new StatisticsCommand(),
                     new StatisticsCommand2(),
                     new TechCommand(),

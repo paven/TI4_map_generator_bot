@@ -415,8 +415,7 @@ public class Mapper {
         if (isBlank(id)) {
             throw new IllegalArgumentException("AC id cannot be blank.");
         }
-        id = id.replace("extra1", "");
-        id = id.replace("extra2", "");
+        id = id.replaceAll("extra\\d+$", "");
         if (!actionCards.containsKey(id)) {
             BotLogger.critical("Action card not found: " + id);
             return null;
@@ -426,10 +425,13 @@ public class Mapper {
 
     public static boolean isValidActionCard(String id) {
         if (id != null) {
-            id = id.replace("extra1", "");
-            id = id.replace("extra2", "");
+            id = id.replaceAll("extra\\d+$", "");
         }
         return actionCards.containsKey(id);
+    }
+
+    public static void registerActionCard(ActionCardModel model) {
+        actionCards.put(model.getAlias(), model);
     }
 
     public static List<String> getActionCardsSources(ComponentSource CompSource) {
@@ -1069,6 +1071,10 @@ public class Mapper {
 
     public static boolean isValidStrategyCard(String strategyCardID) {
         return strategyCards.containsKey(strategyCardID);
+    }
+
+    public static void registerStrategyCard(StrategyCardModel model) {
+        strategyCards.put(model.getId(), model);
     }
 
     public static List<String> getStrategyCardsSources(ComponentSource CompSource) {

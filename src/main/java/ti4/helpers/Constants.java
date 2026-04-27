@@ -1304,6 +1304,7 @@ public final class Constants {
     public static final String GLEDGE_CORE_PNG = "token_ds_gledgecore.png";
     public static final String DS_COMMAND = "ds";
     public static final String TF_COMMAND = "tf";
+    public static final String HOMEBREW_COMMAND = "homebrew";
     public static final String ZELIAN_HERO = "zelian_hero";
     public static final String NAALU_COMMANDER = "naalu_commander";
     public static final String MOVE_CREUSS_WORMHOLE = "move_creuss_wormhole";
